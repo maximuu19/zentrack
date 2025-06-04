@@ -24,7 +24,7 @@
 
 **Want to use ZenTrack immediately without any setup?** The fully portable version is available here:
 
-📂 [Google Drive](https://drive.google.com/file/d/1Wy4MidKQNW6Flk-30J9fUWBHYxSBBxi8/view?usp=sharing)
+📂 [Google Drive](https://drive.google.com/file/d/1qHHTd_Bmc-KBC7vPlMcsmekkCYjd-Yn3/view?usp=sharing)
 
 ```
 📱 Usage: Copy the entire folder anywhere and run ZenTrack.exe
