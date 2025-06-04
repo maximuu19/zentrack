@@ -24,8 +24,9 @@
 
 **Want to use ZenTrack immediately without any setup?** The fully portable version is available here:
 
+📂 [Google Drive](https://drive.google.com/file/d/1Wy4MidKQNW6Flk-30J9fUWBHYxSBBxi8/view?usp=sharing)
+
 ```
-📂 Location: D:\ZenTrack-Portable-Final\
 📱 Usage: Copy the entire folder anywhere and run ZenTrack.exe
 💾 Data Storage: All your projects are saved in the 'data' folder next to the app
 🚀 Zero Setup: No installation required - runs from USB drives, network drives, anywhere!
