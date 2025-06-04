@@ -1,0 +1,5 @@
+{
+  "name": "ZenTrack - Minimalist Project Tracker",
+  "description": "A clean, intuitive project management tool with IndexedDB storage and import/export functionality",
+  "version": "1.0.0"
+}

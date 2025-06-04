@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZenTrack OSAT - Project Tracker</title>
+    <link rel="icon" type="image/svg+xml" href="/appIcon.svg" />
+    <link rel="apple-touch-icon" href="/appIcon.svg" />
+    <meta name="theme-color" content="#38bdf8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif; /* A nice modern font */
+      }
+      /* Custom scrollbar for the light blue theme */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #e0f2fe; /* sky-100 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #7dd3fc; /* sky-300 */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #38bdf8; /* sky-400 */
+      }
+      
+      /* Date input calendar icon styling for consistent look */
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(0.4) brightness(0.7); /* Adjusted for light blue theme */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-sky-100 text-slate-800 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

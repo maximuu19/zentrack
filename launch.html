@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenTrack - Universal Launcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        
+        .launch-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .launch-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .method {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .method h3 {
+            color: #495057;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .method p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        .status {
+            font-size: 0.9em;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .status.works { background: #d4edda; color: #155724; }
+        .status.fallback { background: #fff3cd; color: #856404; }
+        
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .launch-button {
+                display: block;
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🎯</div>
+        <h1>ZenTrack</h1>
+        <p class="subtitle">Universal Project Tracker - Works Anywhere!</p>
+        
+        <a href="dist/index.html" class="launch-button" onclick="trackLaunch('direct')">
+            🚀 Launch ZenTrack Now
+        </a>
+        
+        <div class="method">
+            <h3>
+                🌐 Direct Browser Access 
+                <span class="status works">Always Works</span>
+            </h3>
+            <p>
+                Clicking the button above opens ZenTrack directly in your browser. 
+                This works on ANY computer - no installation, no server, no dependencies required!
+            </p>
+        </div>
+        
+        <div class="method">
+            <h3>
+                🔧 Alternative Methods
+                <span class="status fallback">If Needed</span>
+            </h3>
+            <p>
+                <strong>Windows:</strong> Double-click <code>run-anywhere.bat</code><br>
+                <strong>Manual:</strong> Open <code>dist/index.html</code> in any browser<br>
+                <strong>Server Mode:</strong> Run <code>python serve.py</code> or <code>powershell serve.ps1</code>
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>
+                ✅ <strong>Zero Installation Required</strong> - Just open and use<br>
+                🔒 <strong>Privacy First</strong> - All data stays on your computer<br>
+                🌍 <strong>Universal</strong> - Works on Windows, Mac, Linux, and any browser
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function trackLaunch(method) {
+            // Simple usage tracking (optional)
+            console.log('ZenTrack launched via:', method);
+            
+            // Show success message after a short delay
+            setTimeout(() => {
+                if (confirm('ZenTrack should now be opening in a new tab/window.\n\nIf it didn\'t open automatically:\n1. Right-click the launch button\n2. Select "Open link in new tab"\n\nWould you like to try opening it manually?')) {
+                    window.open('dist/index.html', '_blank');
+                }
+            }, 2000);
+        }
+        
+        // Check if we're running from file:// protocol
+        if (window.location.protocol === 'file:') {
+            console.log('Running from local file system - all features available');
+        }
+        
+        // Auto-detect and show system info
+        const platform = navigator.platform;
+        const userAgent = navigator.userAgent;
+        console.log('Platform:', platform);
+        console.log('User Agent:', userAgent);
+    </script>
+</body>
+</html>

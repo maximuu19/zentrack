@@ -1,0 +1,86 @@
+{
+  "name": "zentrack-minimalist-project-tracker",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "homepage": "./",
+  "description": "A clean, intuitive, and truly portable project management tool for organizing tasks and tracking progress",
+  "author": {
+    "name": "maximuu19",
+    "url": "https://github.com/maximuu19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maximuu19/zentrack-minimalist-project-tracker.git"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "project-management",
+    "task-tracker",
+    "productivity",
+    "electron",
+    "react",
+    "typescript",
+    "portable",
+    "minimalist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "npm run dev",
+    "setup": "npm install && echo Setup complete! Run 'npm start' to launch the app.",
+    "build:prod": "npm run build && npm run preview",
+    "clean": "rm -rf node_modules dist && npm install",
+    "check": "node --version && npm --version && echo Environment check passed!",
+    "postinstall": "echo \"\n🎉 ZenTrack is ready to go!\n📝 Run 'npm start' to launch the app\n🌐 It will open at http://localhost:5173\n\"",
+    "electron": "electron .",
+    "electron:dev": "npm run build && electron .",
+    "build:electron": "npm run build && electron-builder",
+    "dist": "npm run build && electron-builder --publish=never",
+    "pack": "npm run build && electron-builder --dir",
+    "build:win": "npm run build && electron-builder --win",
+    "build:portable": "npm run build && electron-builder --win portable"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  },
+  "build": {
+    "appId": "com.zentrack.app",
+    "productName": "ZenTrack",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json",
+      "appIconPNG.png"
+    ],
+    "asarUnpack": [
+      "electron/**/*"
+    ],
+    "icon": "appIconPNG.png",
+    "win": {
+      "target": "7z",
+      "publisherName": "ZenTrack",
+      "verifyUpdateCodeSignature": false
+    },
+    "portable": {
+      "artifactName": "ZenTrack-Portable-${version}.exe"
+    }
+  }
+}
